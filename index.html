@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraMarket - Premium Multi-Department E-Commerce Experience</title>
+  <meta name="description" content="A state-of-the-art interactive retail e-commerce storefront featuring premium design and multi-department product catalogs.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Background Layer -->
+  <div class="bg-canvas-wrapper">
+    <div class="aurora-bg"></div>
+    <div class="mesh-bg"></div>
+    <div class="floating-shape shape-1"></div>
+    <div class="floating-shape shape-2"></div>
+    <div class="floating-shape shape-3"></div>
+  </div>
+
+  <!-- Splash Screen / Branded Loading -->
+  <div id="splash-screen">
+    <div class="splash-logo">AURAMARKET</div>
+    <div class="splash-loader-bar">
+      <div class="splash-loader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="progress-container">
+    <div class="progress-bar" id="scroll-progress"></div>
+  </div>
+
+  <!-- Sticky Glass Navbar -->
+  <header id="site-header">
+    <div class="container navbar">
+      <a href="#/home" class="logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--accent-cyan)"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        AURA<span>MARKET</span>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a href="#/home" class="nav-item active" id="nav-home">Home</a>
+        <a href="#/categories" class="nav-item" id="nav-categories">Departments</a>
+        
+        <!-- Services Mega Menu -->
+        <span class="nav-item has-megamenu">
+          Shop
+          <div class="megamenu-panel">
+            <div class="megamenu-group">
+              <h4>Apparel & Tech</h4>
+              <ul>
+                <li><a href="#/category/fashion">Fashion Collection</a></li>
+                <li><a href="#/category/mobile">Mobile Phones</a></li>
+                <li><a href="#/category/electronics">Laptops & Audio</a></li>
+              </ul>
+            </div>
+            <div class="megamenu-group">
+              <h4>Daily & Home</h4>
+              <ul>
+                <li><a href="#/category/grocery">Fresh Grocery</a></li>
+                <li><a href="#/category/furniture">Design Furniture</a></li>
+                <li><a href="#/category/sports">Sports & Gear</a></li>
+              </ul>
+            </div>
+            <div class="megamenu-group">
+              <h4>Beauty & Style</h4>
+              <ul>
+                <li><a href="#/category/beauty">Cosmetics & Beauty</a></li>
+                <li><a href="#/about">Our Story</a></li>
+                <li><a href="#/contact">Store Locations</a></li>
+              </ul>
+            </div>
+            <div class="megamenu-group">
+              <h4>Portals</h4>
+              <ul>
+                <li><a href="#/login">Customer Login</a></li>
+                <li><a href="#/admin">Admin Panel</a></li>
+                <li><a href="#/faq">Help & FAQ</a></li>
+              </ul>
+            </div>
+          </div>
+        </span>
+        
+        <a href="#/listing" class="nav-item" id="nav-listing">Browse All</a>
+        <a href="#/offers" class="nav-item" id="nav-offers">Flash Deals</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button class="nav-btn" id="theme-toggle" title="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-dark"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        
+        <!-- Live Search Button -->
+        <button class="nav-btn" id="search-nav-btn" title="Search Catalog">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+
+        <!-- Wishlist -->
+        <a href="#/wishlist" class="nav-btn" title="Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="nav-badge" id="wishlist-count">0</span>
+        </a>
+
+        <!-- Compare -->
+        <a href="#/compare" class="nav-btn" title="Compare Products">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5M4 20L21 3M21 16v5h-5M15 15l6 6M4 4l5 5"></svg>
+          <span class="nav-badge" id="compare-count">0</span>
+        </a>
+
+        <!-- Shopping Cart -->
+        <a href="#/cart" class="nav-btn" title="Shopping Cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <span class="nav-badge" id="cart-count">0</span>
+        </a>
+
+        <a href="#/profile" class="nav-btn" title="User Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Dynamic SPA View Container -->
+  <main id="app-view" class="container" style="margin-top: calc(var(--nav-height) + 1.5rem); min-height: 70vh;">
+    <!-- Skeleton Loaders showing initially until Router takes over -->
+    <div class="view-section">
+      <div class="grid-3">
+        <div class="glass-panel skeleton-rect skeleton"></div>
+        <div class="glass-panel skeleton-rect skeleton"></div>
+        <div class="glass-panel skeleton-rect skeleton"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border-glass); padding: 3rem 0; margin-top: 5rem; background: rgba(0,0,0,0.2);">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+      <div>
+        <p style="font-weight: 700; font-family: var(--font-heading);">AURAMARKET RETAIL</p>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">State-of-the-Art Interactive Shopping Ecosystem.</p>
+      </div>
+      <div style="display: flex; gap: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+        <a href="#/about">Our Story</a>
+        <a href="#/contact">Store Finder</a>
+        <a href="#/faq">Help & Support</a>
+        <a href="#/admin">Business Dashboard</a>
+      </div>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 AuraMarket. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ==========================================
+     GLOBAL OVERLAY SYSTEMS & WINDOWS
+     ========================================== -->
+
+  <!-- Canvas Celebration Layer -->
+  <canvas id="canvas-overlay"></canvas>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top glass-panel btn-secondary">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+  <!-- Toast Notification Center -->
+  <div id="toast-container"></div>
+
+  <!-- Live Search Drawer Modal -->
+  <div id="search-modal" class="modal">
+    <div class="modal-content glass-panel" style="max-width: 500px; padding: 2rem;">
+      <span class="close-modal" id="close-search-modal">&times;</span>
+      <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Instant Search</h3>
+      <div class="form-group" style="margin-bottom: 1rem;">
+        <input type="text" id="search-input" class="form-input" placeholder=" " autocomplete="off">
+        <label for="search-input" class="form-label">Search products, specs, categories...</label>
+        <button id="voice-search-btn" style="position: absolute; right: 10px; top: 12px; color: var(--text-muted); font-size: 1.2rem;" title="Voice Search">🎙️</button>
+      </div>
+      <div id="search-suggestions" style="margin-top: 1rem; max-height: 250px; overflow-y: auto;">
+        <!-- suggestions injected here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Project Modal -->
+  <div id="quick-view-modal" class="modal">
+    <div class="modal-content glass-panel" style="padding: 2.5rem;">
+      <span class="close-modal" id="close-qv-modal">&times;</span>
+      <div id="qv-modal-body">
+        <!-- quick view content loaded dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+     SPA TEMPLATE DEFINITIONS (HTML5 Templates)
+     ========================================== -->
+
+  <!-- 1. HOME VIEW -->
+  <template id="tpl-home">
+    <div class="view-section reveal active">
+      <!-- Auto Slider / Hero -->
+      <div class="hero-slider-container">
+        <div class="slide active">
+          <div class="slide-bg" style="background-image: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(157, 78, 221, 0.1) 100%);"></div>
+          <div class="slide-content">
+            <h2>Luxury Apparel & <span>Designer Wear</span></h2>
+            <p>Welcome to AuraMarket, where curated collections, global designer fashion, and premium accessories are displayed through interactive modules.</p>
+            <div style="display: flex; gap: 1rem;">
+              <a href="#/category/fashion" class="btn-primary ripple-btn shine-effect">Shop Fashion</a>
+              <a href="#/listing" class="btn-secondary magnetic">Browse All Catalog</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="slide-bg" style="background-image: linear-gradient(135deg, rgba(247, 37, 133, 0.1) 0%, rgba(247, 127, 0, 0.1) 100%);"></div>
+          <div class="slide-content">
+            <h2>Flagship Tech & <span>Laptops</span></h2>
+            <p>From core compute chipsets to premium sound insulation headphones, upgrade your workspace and tech gear with selected premium products.</p>
+            <div style="display: flex; gap: 1rem;">
+              <a href="#/category/electronics" class="btn-primary ripple-btn">Explore Tech</a>
+              <a href="#/offers" class="btn-secondary">View Deals</a>
+            </div>
+          </div>
+        </div>
+        <div class="slider-dots">
+          <span class="slider-dot active" data-index="0"></span>
+          <span class="slider-dot" data-index="1"></span>
+        </div>
+      </div>
+
+      <!-- Feature Reveal Section -->
+      <h2 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Featured Arrivals</h2>
+      
+      <!-- Showcase Cards -->
+      <div class="grid-3 stagger-list" id="home-featured-grid">
+        <!-- Injected dynamically in JS -->
+      </div>
+
+      <!-- Wave divider SVG -->
+      <div class="wave-container">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,60 C150,110 350,10 500,60 C650,110 850,10 1000,60 C1150,110 1300,60 1400,60 L1400,120 L0,120 Z" style="fill: var(--bg-secondary);"></path>
+        </svg>
+      </div>
+
+      <!-- Store Statistics -->
+      <div class="glass-panel" style="padding: 3rem; margin-top: 4rem; text-align: center;">
+        <h3 style="margin-bottom: 2rem;">Global Marketplace Operations</h3>
+        <div class="grid-4">
+          <div>
+            <h4 style="font-size: 3rem; color: var(--accent-cyan);" class="counter" data-target="98">0</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Customer Trust Score</p>
+          </div>
+          <div>
+            <h4 style="font-size: 3rem; color: var(--accent-purple);" class="counter" data-target="15">0</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Express Delivery Hubs</p>
+          </div>
+          <div>
+            <h4 style="font-size: 3rem; color: var(--accent-pink);" class="counter" data-target="250">0</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Global Brands</p>
+          </div>
+          <div>
+            <h4 style="font-size: 3rem; color: var(--accent-green);" class="counter" data-target="10">0</h4>
+            <p style="color: var(--text-secondary); font-size: 0.9rem;">Direct Partnerships</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 2. CATEGORIES VIEW -->
+  <template id="tpl-categories">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">Market Departments</h2>
+      <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">
+        Explore curated catalogs across primary shopping categories. Enjoy dynamic animations, details viewing, and compare options.
+      </p>
+      
+      <div class="grid-3" id="categories-grid">
+        <!-- Category cards injected in JS -->
+      </div>
+    </div>
+  </template>
+
+  <!-- 3. FASHION VIEW (Apparel Showcase) -->
+  <template id="tpl-category-fashion">
+    <div class="view-section reveal fashion-bg" style="border-radius: 20px; padding: 4rem 2rem; position: relative;">
+      <!-- Floating Leaves Container -->
+      <div class="leaves-container" id="leaves-target"></div>
+      
+      <div style="position: relative; z-index: 2;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Designer Fashion Collection</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 3rem;">
+          Discover curated fabrics, seasonal leather apparel, customized summer dresses, and luxury streetwear items.
+        </p>
+
+        <!-- Ken Burns Parallax Banner -->
+        <div style="height: 300px; border-radius: 12px; overflow: hidden; position: relative; margin-bottom: 4rem;">
+          <div class="slide-bg ken-burns" style="background-image: linear-gradient(135deg, #7b2cbf 0%, #3c096c 100%);"></div>
+          <div style="position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 3rem; background: rgba(0,0,0,0.4);">
+            <h3 style="font-size: 2rem; color: #fff;">Winter Leather & Hoodies</h3>
+            <p style="color: #cbd5e1; max-width: 450px;">Handcrafted premium fit outerwear with thermal-insulating inner lining.</p>
+          </div>
+        </div>
+
+        <h3 style="margin-bottom: 2rem;">Fashion Catalog</h3>
+        <div class="grid-3" id="fashion-projects-grid"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 4. MOBILE VIEW -->
+  <template id="tpl-category-mobile">
+    <div class="view-section reveal">
+      <div class="mobile-hero">
+        <div style="max-width: 550px;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Smartphones & Mobile Tech</h2>
+          <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+            Experience cutting-edge screen technology, titanium frames, flagship computational photography, and all-day batteries.
+          </p>
+          <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+            <span class="glass-panel" style="padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: bold; border-color: var(--accent-cyan)">Apple</span>
+            <span class="glass-panel" style="padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: bold; border-color: var(--accent-purple)">Samsung</span>
+            <span class="glass-panel" style="padding: 0.5rem 1rem; font-size: 0.85rem; font-weight: bold; border-color: var(--accent-pink)">Google Pixel</span>
+          </div>
+        </div>
+        <div class="floating-phone-wrapper">
+          <div class="floating-phone" style="display: flex; flex-direction: column; justify-content: space-between; padding: 1.5rem; color: #fff;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-muted)">
+              <span>9:41</span>
+              <span>🔋 100%</span>
+            </div>
+            <div style="text-align: center;">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-cyan); margin: 0 auto 1rem;"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              <h4 style="font-size: 1rem; font-family: var(--font-heading);">Titanium Pro</h4>
+              <p style="font-size: 0.75rem; color: var(--text-secondary);">Dynamic Reflection</p>
+            </div>
+            <div style="height: 4px; width: 80px; background: var(--text-muted); border-radius: 4px; margin: 0 auto;"></div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom: 2rem; margin-top: 4rem;">Smartphones Catalog</h3>
+      <div class="grid-3" id="mobile-projects-grid"></div>
+    </div>
+  </template>
+
+  <!-- 5. ELECTRONICS VIEW -->
+  <template id="tpl-category-electronics">
+    <div class="view-section reveal electronics-bg" style="border-radius: 20px; padding: 4rem 2rem; position: relative; overflow: hidden;">
+      <div style="position: relative; z-index: 2;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Laptops & Premium Audio</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 3rem;">
+          High-performance silicon chips, active noise cancellation headphones, custom gaming monitors, and professional accessories.
+        </p>
+
+        <!-- Live compute visualizer diagram -->
+        <div class="glass-panel" style="padding: 2rem; margin-bottom: 4rem; text-align: center; background: rgba(18,22,32,0.85);">
+          <h4 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Interactive Silicon Stream</h4>
+          <svg viewBox="0 0 800 200" style="max-height: 150px; width: 100%;">
+            <path d="M100,100 L300,50 M100,100 L300,150 M300,50 L500,100 M300,150 L500,100 M500,100 L700,100" stroke="rgba(0, 242, 254, 0.3)" stroke-width="2" fill="none" id="network-edge-lines"></path>
+            
+            <circle cx="100" cy="100" r="20" fill="var(--accent-purple)"></circle>
+            <text x="100" y="105" fill="#fff" font-size="10" text-anchor="middle" font-weight="bold">Core</text>
+
+            <circle cx="300" cy="50" r="20" fill="var(--accent-cyan)"></circle>
+            <text x="300" y="55" fill="#fff" font-size="10" text-anchor="middle" font-weight="bold">GPU</text>
+
+            <circle cx="300" cy="150" r="20" fill="var(--accent-cyan)"></circle>
+            <text x="300" y="155" fill="#fff" font-size="10" text-anchor="middle" font-weight="bold">RAM</text>
+
+            <circle cx="500" cy="100" r="20" fill="var(--accent-pink)"></circle>
+            <text x="500" y="105" fill="#fff" font-size="10" text-anchor="middle" font-weight="bold">Cache</text>
+
+            <circle cx="700" cy="100" r="20" fill="var(--accent-green)"></circle>
+            <text x="700" y="105" fill="#fff" font-size="10" text-anchor="middle" font-weight="bold">Output</text>
+          </svg>
+          <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 1rem;">Simulation showing data pipeline bus traffic on custom high-efficiency chips.</p>
+        </div>
+
+        <h3 style="margin-bottom: 2rem;">Computing & Audio Catalog</h3>
+        <div class="grid-3" id="electronics-projects-grid"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 6. GROCERY VIEW -->
+  <template id="tpl-category-grocery">
+    <div class="view-section reveal grocery-theme" style="border-radius: 20px; padding: 4rem 2rem; position: relative;">
+      <div id="fruits-target"></div>
+      
+      <div style="position: relative; z-index: 2;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #fff;">Fresh Organic Grocery</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 3rem;">
+          Fresh farm-to-table organic avocados, citrus fruits, imported premium coffee beans, and artisan bakery products.
+        </p>
+
+        <h3 style="margin-bottom: 2rem; color: #fff;">Produce & Greens</h3>
+        <div class="grid-3" id="grocery-projects-grid"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 7. BEAUTY VIEW -->
+  <template id="tpl-category-beauty">
+    <div class="view-section reveal beauty-theme" style="border-radius: 20px; padding: 4rem 2rem; position: relative; overflow: hidden;">
+      <div class="bubbles-container" id="bubbles-target"></div>
+      
+      <div style="position: relative; z-index: 2;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Cosmetics & Hydrating Skincare</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 3rem;">
+          Hypoallergenic skin serums, glow lipsticks, hydration clays, and professional makeup kits.
+        </p>
+
+        <h3 style="margin-bottom: 2rem;">Skincare & Cosmetics Catalog</h3>
+        <div class="grid-3" id="beauty-projects-grid"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 8. FURNITURE VIEW -->
+  <template id="tpl-category-furniture">
+    <div class="view-section reveal furniture-theme" style="border-radius: 20px; padding: 4rem 2rem; position: relative;">
+      <div class="warm-lighting"></div>
+      
+      <div style="position: relative; z-index: 2;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Architectural Home Decor & Desks</h2>
+        <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 3rem;">
+          Minimalist wooden tables, premium ergonomic desk chairs, custom workspace layouts, and modular leather sofas.
+        </p>
+
+        <h3 style="margin-bottom: 2rem;">Design Furniture</h3>
+        <div class="grid-3" id="furniture-projects-grid"></div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 9. SPORTS VIEW -->
+  <template id="tpl-category-sports">
+    <div class="view-section reveal sports-theme" style="border-radius: 20px; padding: 4rem 2rem; position: relative;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Sports Gear & Outdoor Bikes</h2>
+      <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin-bottom: 3rem;">
+        Carbon fiber road bicycles, pro leather soccer balls, high-speed trackers, and premium athletic apparel.
+      </p>
+
+      <h3 style="margin-bottom: 2rem;">Sports Catalog</h3>
+      <div class="grid-3" id="sports-projects-grid"></div>
+    </div>
+  </template>
+
+  <!-- 10. PRODUCT LISTING (Browse Catalog) -->
+  <template id="tpl-listing">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">Product Catalog</h2>
+      
+      <div class="listing-layout">
+        <!-- Sidebar filters -->
+        <aside class="filter-sidebar glass-panel">
+          <div class="filter-group">
+            <h4>Filter Departments</h4>
+            <div id="filter-tech-tags">
+              <!-- checkboxes loaded dynamically -->
+            </div>
+          </div>
+          <div class="filter-group">
+            <h4>Sort Options</h4>
+            <select id="filter-sort" class="form-input" style="padding: 0.5rem 0.75rem; background: rgba(0,0,0,0.2);">
+              <option value="default">Default</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="name">Product Name A-Z</option>
+            </select>
+          </div>
+          <button id="btn-clear-filters" class="btn-secondary" style="width: 100%; padding: 0.6rem; font-size: 0.85rem;">Clear Filters</button>
+        </aside>
+
+        <!-- Projects Grid -->
+        <div>
+          <div class="grid-3" id="listing-projects-grid">
+            <!-- items generated by JS -->
+          </div>
+          <!-- Infinite Scroll Trigger -->
+          <div id="infinite-scroll-trigger" style="text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem;">
+            Loading more products...
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 11. PRODUCT DETAILS VIEW -->
+  <template id="tpl-details">
+    <div class="view-section reveal">
+      <div class="details-layout" id="details-view-container">
+        <!-- Loaded dynamically via details routing -->
+      </div>
+    </div>
+  </template>
+
+  <!-- 12. SEARCH RESULTS VIEW -->
+  <template id="tpl-search">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2rem; margin-bottom: 0.5rem;" id="search-title">Search Results</h2>
+      <p style="color: var(--text-secondary); margin-bottom: 2rem;" id="search-subtitle">Showing results...</p>
+      
+      <div class="grid-4" id="search-projects-grid"></div>
+    </div>
+  </template>
+
+  <!-- 13. WISHLIST VIEW -->
+  <template id="tpl-wishlist">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">My Wishlist</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">Bookmark items you'd like to purchase later.</p>
+
+      <div class="grid-3" id="wishlist-grid"></div>
+      <div id="wishlist-empty" style="text-align: center; padding: 3rem; color: var(--text-muted); display: none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="margin: 0 auto 1.5rem;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <p>Your wishlist is currently empty.</p>
+        <a href="#/listing" class="btn-primary" style="margin-top: 1.5rem;">Explore Catalog</a>
+      </div>
+    </div>
+  </template>
+
+  <!-- 14. COMPARE VIEW -->
+  <template id="tpl-compare">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; text-align: center;">Product Comparison Grid</h2>
+      <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">Compare key features, ratings, and physical dimensions of selected products.</p>
+
+      <div id="compare-table-container">
+        <!-- generated dynamically in JS -->
+      </div>
+    </div>
+  </template>
+
+  <!-- 15. SHOPPING CART VIEW -->
+  <template id="tpl-cart">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Shopping Cart</h2>
+
+      <div class="cart-layout">
+        <!-- List of selected items -->
+        <div class="glass-panel" id="cart-items-list" style="padding: 1rem;">
+          <!-- injected in JS -->
+        </div>
+
+        <!-- Cart Summary -->
+        <aside class="glass-panel" style="padding: 2rem; height: fit-content;">
+          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Order Summary</h3>
+          
+          <div style="display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 0.95rem; color: var(--text-secondary);">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">$0.00</span>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
+            <span>Promotional Discount</span>
+            <span id="cart-discount">$0.00</span>
+          </div>
+
+          <!-- Coupon Input -->
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <input type="text" id="cart-coupon-input" class="form-input" placeholder=" " style="padding: 0.6rem 0.8rem; font-size: 0.85rem;">
+            <label for="cart-coupon-input" class="form-label" style="font-size: 0.85rem;">Coupon Code (e.g. AURA20)</label>
+            <button id="btn-apply-coupon" style="position: absolute; right: 10px; top: 8px; font-size: 0.8rem; color: var(--accent-cyan); font-weight: bold;">Apply</button>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-bottom: 2rem; font-size: 1.25rem; font-weight: 700; border-top: 1px solid var(--border-glass); padding-top: 1rem;">
+            <span>Estimated Total</span>
+            <span id="cart-total">$0.00</span>
+          </div>
+
+          <a href="#/checkout" class="btn-primary ripple-btn" style="width: 100%;">Proceed to Checkout</a>
+        </aside>
+      </div>
+    </div>
+  </template>
+
+  <!-- 16. CHECKOUT VIEW -->
+  <template id="tpl-checkout">
+    <div class="view-section reveal">
+      <div class="checkout-steps">
+        <div class="step-node active" id="step-node-1">
+          <div class="step-num">1</div>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Address</span>
+        </div>
+        <div class="step-node" id="step-node-2">
+          <div class="step-num">2</div>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Shipping</span>
+        </div>
+        <div class="step-node" id="step-node-3">
+          <div class="step-num">3</div>
+          <span style="font-size: 0.8rem; color: var(--text-secondary);">Review</span>
+        </div>
+      </div>
+
+      <div class="glass-panel" style="max-width: 600px; margin: 0 auto; padding: 3rem;">
+        <form id="checkout-form">
+          <!-- Step 1 Content -->
+          <div id="checkout-step-1">
+            <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Shipping Details</h3>
+            <div class="form-group">
+              <input type="text" id="co-name" class="form-input" placeholder=" " required>
+              <label for="co-name" class="form-label">Full Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="co-email" class="form-input" placeholder=" " required>
+              <label for="co-email" class="form-label">Email Address</label>
+            </div>
+            <div class="form-group">
+              <input type="text" id="co-subject" class="form-input" placeholder=" " required>
+              <label for="co-subject" class="form-label">Delivery Address</label>
+            </div>
+            <button type="button" id="btn-next-step-1" class="btn-primary" style="width: 100%;">Next: Shipping Options</button>
+          </div>
+
+          <!-- Step 2 Content -->
+          <div id="checkout-step-2" style="display: none;">
+            <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Select Shipping Method</h3>
+            <div class="form-group">
+              <select id="co-notes" class="form-input" placeholder=" ">
+                <option value="standard">Standard Mail Delivery (Free, 3-5 business days)</option>
+                <option value="express">Express Priority Courier (+$15.00, 1-2 business days)</option>
+              </select>
+              <label for="co-notes" class="form-label">Shipping Speed</label>
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <button type="button" id="btn-prev-step-2" class="btn-secondary" style="flex: 1;">Back</button>
+              <button type="button" id="btn-next-step-2" class="btn-primary" style="flex: 2;">Next: Review Order</button>
+            </div>
+          </div>
+
+          <!-- Step 3 Content -->
+          <div id="checkout-step-3" style="display: none;">
+            <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Confirm Order Summary</h3>
+            <div id="checkout-review-summary" style="margin-bottom: 2rem; font-size: 0.95rem; color: var(--text-secondary);">
+              <!-- filled by JS -->
+            </div>
+            <div style="display: flex; gap: 1rem;">
+              <button type="button" id="btn-prev-step-3" class="btn-secondary" style="flex: 1;">Back</button>
+              <a href="#/payment" class="btn-primary" style="flex: 2; text-align: center;">Proceed to Payment</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </template>
+
+  <!-- 17. PAYMENT VIEW -->
+  <template id="tpl-payment">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">Secure Billing</h2>
+
+      <div class="glass-panel" style="max-width: 500px; margin: 0 auto; padding: 2.5rem;">
+        <!-- Card Widget mockup -->
+        <div class="payment-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+            <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: bold; letter-spacing: 0.05em;">AURAMARKET CARD</span>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent-cyan)"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </div>
+          <div style="font-size: 1.25rem; font-weight: bold; font-family: var(--font-heading); letter-spacing: 0.1em;" id="pay-card-num">•••• •••• •••• ••••</div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-secondary);">
+            <div>
+              <div style="font-size: 0.6rem; text-transform: uppercase;">Cardholder</div>
+              <span id="pay-card-holder">Your Name</span>
+            </div>
+            <div>
+              <div style="font-size: 0.6rem; text-transform: uppercase;">Expires</div>
+              <span>12 / 29</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form fields -->
+        <form id="payment-form">
+          <div class="form-group">
+            <input type="text" id="pay-holder" class="form-input" placeholder=" " required>
+            <label for="pay-holder" class="form-label">Cardholder Name</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="pay-number" class="form-input" placeholder=" " maxlength="19" required>
+            <label for="pay-number" class="form-label">Card Number (16-Digit)</label>
+          </div>
+          <div class="grid-2">
+            <div class="form-group">
+              <input type="text" id="pay-expiry" class="form-input" placeholder=" " maxlength="5" required>
+              <label for="pay-expiry" class="form-label">Expiry (MM/YY)</label>
+            </div>
+            <div class="form-group">
+              <input type="password" id="pay-cvv" class="form-input" placeholder=" " maxlength="3" required>
+              <label for="pay-cvv" class="form-label">CVV</label>
+            </div>
+          </div>
+          <button type="submit" class="btn-primary ripple-btn" style="width: 100%; margin-top: 1rem;" id="btn-submit-payment">Submit Secure Payment</button>
+        </form>
+      </div>
+    </div>
+  </template>
+
+  <!-- 18. SUCCESS VIEW -->
+  <template id="tpl-success">
+    <div class="view-section reveal" style="text-align: center;">
+      <div class="glass-panel" style="max-width: 600px; margin: 0 auto; padding: 4rem 2rem;">
+        
+        <!-- Animated Checkmark -->
+        <div style="width: 80px; height: 80px; border-radius: 50%; border: 4px solid var(--accent-green); display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--accent-green); font-size: 2.5rem; animation: heart-pop 0.5s ease-out;">
+          ✓
+        </div>
+
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-family: var(--font-heading);">Order Completed!</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Your checkout transaction has been approved. A fireworks celebration has been initiated to mark your purchase!</p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="#/tracking" class="btn-primary">Track Package</a>
+          <a href="#/home" class="btn-secondary">Return Home</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 19. ORDER TRACKING VIEW -->
+  <template id="tpl-tracking">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">Package Tracking Roadmap</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem;">Live status rendering of regional sorting hubs, dispatch routing, and estimated final delivery.</p>
+
+      <div class="glass-panel" style="max-width: 700px; margin: 0 auto; padding: 3rem;">
+        <!-- Live progress tracker bar -->
+        <div style="margin-bottom: 3rem;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.5rem; font-weight: bold;">
+            <span>Package Transit Status</span>
+            <span style="color: var(--accent-cyan);">60% (In Transit)</span>
+          </div>
+          <div style="height: 8px; width: 100%; background: var(--bg-tertiary); border-radius: 4px; overflow: hidden; position: relative;">
+            <div style="height: 100%; width: 60%; background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple)); animation: load-bar 2s forwards;" id="tracking-bar"></div>
+          </div>
+        </div>
+
+        <!-- Tracking Sprints -->
+        <div class="timeline" style="margin-top: 2rem;">
+          <div class="timeline-item" style="width: 100%; left: 0; padding-left: 3rem; text-align: left; margin-bottom: 2.5rem;">
+            <div class="timeline-dot" style="left: -8px; background: var(--accent-green);"></div>
+            <div class="timeline-date">Phase 1: Order Processed & Packed</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Items collected, verified, and package custom labeled inside local fulfillment centers.</p>
+          </div>
+          
+          <div class="timeline-item" style="width: 100%; left: 0; padding-left: 3rem; text-align: left; margin-bottom: 2.5rem;">
+            <div class="timeline-dot" style="left: -8px; background: var(--accent-green);"></div>
+            <div class="timeline-date">Phase 2: Dispatched from Facility</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Handed over to carrier freight networks, route latency calculated.</p>
+          </div>
+
+          <div class="timeline-item" style="width: 100%; left: 0; padding-left: 3rem; text-align: left; margin-bottom: 2.5rem;">
+            <div class="timeline-dot" style="left: -8px; background: var(--accent-cyan); box-shadow: 0 0 10px var(--accent-cyan);"></div>
+            <div class="timeline-date">Phase 3: In Transit (Active)</div>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Sorting hub routing complete, packages moving via carrier trucks.</p>
+          </div>
+
+          <div class="timeline-item" style="width: 100%; left: 0; padding-left: 3rem; text-align: left; margin-bottom: 0;">
+            <div class="timeline-dot" style="left: -8px; background: var(--text-muted);"></div>
+            <div class="timeline-date">Phase 4: Out for Delivery (Pending)</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Handed over to local neighborhood dispatch agents, signature verification ready.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 20. LOGIN VIEW -->
+  <template id="tpl-login">
+    <div class="view-section reveal">
+      <div class="auth-container glass-panel">
+        <div class="auth-header">
+          <h2 style="font-size: 2rem; font-family: var(--font-heading);">Customer Sign In</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Sign in to view orders tracking scopes and wishlist items</p>
+        </div>
+        
+        <form id="login-form">
+          <div class="form-group" id="login-email-group">
+            <input type="email" id="login-email" class="form-input" placeholder=" " required>
+            <label for="login-email" class="form-label">Email Address</label>
+          </div>
+          <div class="form-group" id="login-password-group">
+            <input type="password" id="login-password" class="form-input" placeholder=" " required>
+            <label for="login-password" class="form-label">Password</label>
+          </div>
+          <!-- Password strength meter for customer input -->
+          <div class="strength-meter" style="display: none;" id="login-pw-meter">
+            <div class="strength-bar" id="login-pw-bar"></div>
+          </div>
+          
+          <button type="submit" class="btn-primary ripple-btn" style="width: 100%; margin-top: 1.5rem;">Sign In</button>
+        </form>
+
+        <div style="display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-secondary); margin-top: 1.5rem;">
+          <a href="#/forgot">Forgot Password?</a>
+          <a href="#/register">Create Customer Account</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 21. REGISTER VIEW -->
+  <template id="tpl-register">
+    <div class="view-section reveal">
+      <div class="auth-container glass-panel">
+        <div class="auth-header">
+          <h2 style="font-size: 2rem; font-family: var(--font-heading);">Create Account</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Register to save tracking routes, coupon deals, and wishlist items</p>
+        </div>
+
+        <form id="register-form">
+          <div class="form-group">
+            <input type="text" id="reg-name" class="form-input" placeholder=" " required>
+            <label for="reg-name" class="form-label">Full Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="reg-email" class="form-input" placeholder=" " required>
+            <label for="reg-email" class="form-label">Email Address</label>
+          </div>
+          <div class="form-group" id="reg-password-group">
+            <input type="password" id="reg-password" class="form-input" placeholder=" " required>
+            <label for="reg-password" class="form-label">Password</label>
+            <!-- Strength meter -->
+            <div class="strength-meter" id="reg-pw-meter">
+              <div class="strength-bar" id="reg-pw-bar"></div>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn-primary ripple-btn" style="width: 100%; margin-top: 1.5rem;">Create Account</button>
+        </form>
+
+        <div style="text-align: center; font-size: 0.8rem; color: var(--text-secondary); margin-top: 1.5rem;">
+          Already have an account? <a href="#/login" style="color: var(--accent-cyan);">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 22. FORGOT PASSWORD -->
+  <template id="tpl-forgot">
+    <div class="view-section reveal">
+      <div class="auth-container glass-panel">
+        <div class="auth-header">
+          <h2 style="font-size: 2rem; font-family: var(--font-heading);">Reset Password</h2>
+          <p style="color: var(--text-secondary); font-size: 0.85rem;">Send password recovery instructions to email</p>
+        </div>
+
+        <form id="forgot-form">
+          <div class="form-group">
+            <input type="email" id="forgot-email" class="form-input" placeholder=" " required>
+            <label for="forgot-email" class="form-label">Customer Email</label>
+          </div>
+          <button type="submit" class="btn-primary ripple-btn" style="width: 100%; margin-top: 1.5rem;">Send Recovery Email</button>
+        </form>
+
+        <div style="text-align: center; font-size: 0.8rem; color: var(--text-secondary); margin-top: 1.5rem;">
+          <a href="#/login">Back to Login</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 23. USER PROFILE (Dashboard) -->
+  <template id="tpl-profile">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center;">Customer Account Workspace</h2>
+
+      <div class="grid-3" style="align-items: flex-start;">
+        <!-- Left: Profile Panel -->
+        <div class="glass-panel" style="padding: 2rem; text-align: center;">
+          <div style="width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: #fff; font-size: 2.5rem; font-weight: bold;">
+            U
+          </div>
+          <h3 style="font-family: var(--font-heading);" id="prof-user-name">Guest Customer</h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;" id="prof-user-email">guest@example.com</p>
+          <hr style="border: 0; border-top: 1px solid var(--border-glass); margin-bottom: 1.5rem;">
+          <button id="btn-profile-logout" class="btn-secondary" style="width: 100%; padding: 0.6rem;">Sign Out</button>
+        </div>
+
+        <!-- Center & Right: Dashboard Statistics -->
+        <div style="grid-column: span 2; display: flex; flex-direction: column; gap: 2rem;">
+          <div class="grid-3">
+            <div class="glass-panel" style="padding: 1.5rem; text-align: center;">
+              <h4 style="font-size: 2rem; color: var(--accent-cyan);" class="counter" data-target="1">0</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">Active Packages</p>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem; text-align: center;">
+              <h4 style="font-size: 2rem; color: var(--accent-purple);" class="counter" data-target="4">0</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">Past Orders</p>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem; text-align: center;">
+              <h4 style="font-size: 2rem; color: var(--accent-green);" class="counter" data-target="2">0</h4>
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">Claimed Coupon Deals</p>
+            </div>
+          </div>
+
+          <!-- Active Roadmaps card -->
+          <div class="glass-panel" style="padding: 2rem;">
+            <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Booked Deliveries</h3>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; border-bottom: 1px solid var(--border-glass);">
+                <div>
+                  <h4 style="font-size: 0.95rem;">Premium smartphone delivery package</h4>
+                  <p style="font-size: 0.8rem; color: var(--text-secondary);">Transit zone: US-East Edge Sort</p>
+                </div>
+                <a href="#/tracking" class="btn-secondary" style="padding: 0.4rem 0.8rem; font-size: 0.75rem; border-radius: 4px;">Track Package</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 24. OFFERS VIEW -->
+  <template id="tpl-offers">
+    <div class="view-section reveal">
+      <div class="glass-panel" style="padding: 4rem; text-align: center; margin-bottom: 4rem; background: linear-gradient(135deg, rgba(247,37,133,0.1) 0%, rgba(157,78,221,0.1) 100%);">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem; font-family: var(--font-heading);">Exclusive Promotional Flash Sales</h2>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">Unlock flash coupons, multi-buy deals, and seasonal clearance events.</p>
+        
+        <!-- Live Countdown Timer -->
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 2rem;" id="countdown-timer">
+          <div class="glass-panel" style="padding: 0.75rem 1.25rem;">
+            <div style="font-size: 1.5rem; font-weight: bold;" id="timer-hours">00</div>
+            <div style="font-size: 0.7rem; text-transform: uppercase;">Hours</div>
+          </div>
+          <div class="glass-panel" style="padding: 0.75rem 1.25rem;">
+            <div style="font-size: 1.5rem; font-weight: bold;" id="timer-minutes">00</div>
+            <div style="font-size: 0.7rem; text-transform: uppercase;">Mins</div>
+          </div>
+          <div class="glass-panel" style="padding: 0.75rem 1.25rem;">
+            <div style="font-size: 1.5rem; font-weight: bold;" id="timer-seconds">00</div>
+            <div style="font-size: 0.7rem; text-transform: uppercase;">Secs</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Offers listing cards -->
+      <div class="grid-3" id="offers-grid"></div>
+    </div>
+  </template>
+
+  <!-- 25. CONTACT VIEW -->
+  <template id="tpl-contact">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">Support & Locations</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem;">Get in touch for package queries, corporate orders, or store locations support.</p>
+
+      <div class="grid-2">
+        <!-- Inquiry Form -->
+        <div class="glass-panel" style="padding: 2.5rem;">
+          <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading);">Submit Support Ticket</h3>
+          <form id="contact-form">
+            <div class="form-group">
+              <input type="text" id="contact-name" class="form-input" placeholder=" " required>
+              <label for="contact-name" class="form-label">Your Name</label>
+            </div>
+            <div class="form-group">
+              <input type="email" id="contact-email" class="form-input" placeholder=" " required>
+              <label for="contact-email" class="form-label">Email Address</label>
+            </div>
+            <div class="form-group">
+              <textarea id="contact-msg" class="form-input" placeholder=" " style="height: 120px; resize: none;" required></textarea>
+              <label for="contact-msg" class="form-label">Your Message...</label>
+            </div>
+            <button type="submit" class="btn-primary ripple-btn" style="width: 100%;">Submit Ticket</button>
+          </form>
+        </div>
+
+        <!-- Interactive Map Widget (Simulated Canvas Map) -->
+        <div class="glass-panel" style="padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 style="margin-bottom: 0.5rem; font-family: var(--font-heading);">Store Locator & Shipping Edges</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Click regional sorting nodes to verify local shipping availability and latency parameters.</p>
+          </div>
+          <div style="height: 250px; background: rgba(0,0,0,0.2); border-radius: 8px; position: relative; overflow: hidden; border: 1px solid var(--border-glass);">
+            <canvas id="canvas-map" style="width: 100%; height: 100%; cursor: crosshair;"></canvas>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem; display: flex; justify-content: space-between;">
+            <span>Regional Zone: <b>US-East Edge Hub</b></span>
+            <span>Transit latency: <b>12ms</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 26. ABOUT VIEW -->
+  <template id="tpl-about">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: center;">Our Story & Milestones</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 4rem;">Detailed company progression, startup expansion milestones, and platform development timelines.</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-panel">
+            <div class="timeline-date">2024 - Present</div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Global Fulfillment Expansion</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Established distributed warehouse sorting centers, reduced delivery latency, and scaled direct partner integrations.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-panel">
+            <div class="timeline-date">2021 - 2024</div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Interactive Platform Launch</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Redesigned multi-department retail catalog pipelines with advanced canvas interfaces, dark modes, and client dashboards.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card glass-panel">
+            <div class="timeline-date">2018 - 2021</div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Aura Marketplace Initiation</h4>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">Conceptualized high-fidelity online shopping components, shopping baskets, and card mockups.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- 27. FAQ VIEW -->
+  <template id="tpl-faq">
+    <div class="view-section reveal">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; text-align: center;">Help & FAQ</h2>
+      <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">Clear explanations about shipping details, coupons, and interactive tools.</p>
+
+      <div style="max-width: 700px; margin: 0 auto;" id="faq-container">
+        <!-- Generated dynamically in JS -->
+      </div>
+    </div>
+  </template>
+
+  <!-- 28. ADMIN VIEW -->
+  <template id="tpl-admin">
+    <div class="view-section reveal" style="padding-top: 2rem;">
+      <h2 style="font-size: 2rem; margin-bottom: 1.5rem; font-family: var(--font-heading);">Operations Analytics Portal</h2>
+
+      <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar glass-panel">
+          <ul class="admin-sidebar-nav">
+            <li class="active"><a href="#/admin">📊 Revenue View</a></li>
+            <li><a href="#/admin" onclick="alert('Configuration parameters locked.')">⚙️ Settings</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Dashboard content -->
+        <div class="admin-main">
+          <!-- Glass Cards for Quick stats -->
+          <div class="grid-3">
+            <div class="glass-panel" style="padding: 1.5rem;">
+              <h5 style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 0.5rem; text-transform: uppercase;">Weekly Sales Revenue</h5>
+              <div style="font-size: 1.75rem; font-weight: bold;" class="counter" data-target="9540">0</div>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem;">
+              <h5 style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 0.5rem; text-transform: uppercase;">Store Visitors</h5>
+              <div style="font-size: 1.75rem; font-weight: bold;" class="counter" data-target="984">0</div>
+            </div>
+            <div class="glass-panel" style="padding: 1.5rem;">
+              <h5 style="color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 0.5rem; text-transform: uppercase;">Pending Orders Queue</h5>
+              <div style="font-size: 1.75rem; font-weight: bold;" class="counter" data-target="12">0</div>
+            </div>
+          </div>
+
+          <!-- Charts and Drag-Drop Board -->
+          <div class="admin-grid-charts">
+            <!-- Canvas Analytics Chart -->
+            <div class="glass-panel chart-container">
+              <h4 style="margin-bottom: 1rem; font-size: 0.95rem;">Weekly Revenue Analytics</h4>
+              <canvas id="admin-chart-commits"></canvas>
+            </div>
+            <!-- Canvas Visitors Chart -->
+            <div class="glass-panel chart-container">
+              <h4 style="margin-bottom: 1rem; font-size: 0.95rem;">Visitor Department Sources</h4>
+              <canvas id="admin-chart-visitors"></canvas>
+            </div>
+          </div>
+
+          <!-- Kanban Tasks Drag & Drop -->
+          <div class="glass-panel" style="padding: 2rem;">
+            <h3 style="margin-bottom: 1.5rem; font-family: var(--font-heading); font-size: 1.1rem;">Fulfillment Kanban Board (Drag & Drop)</h3>
+            <div class="kanban-board">
+              <div class="kanban-col" id="kanban-todo" ondragover="event.preventDefault()" ondrop="app.handleDrop(event, 'todo')">
+                <h4>Processing</h4>
+                <div class="glass-panel kanban-task" draggable="true" ondragstart="app.handleDragStart(event)" id="task-1">
+                  <h5>Order #1824</h5>
+                  <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">Apparel items custom pack</p>
+                </div>
+              </div>
+              
+              <div class="kanban-col" id="kanban-progress" ondragover="event.preventDefault()" ondrop="app.handleDrop(event, 'progress')">
+                <h4>Dispatched</h4>
+                <div class="glass-panel kanban-task" draggable="true" ondragstart="app.handleDragStart(event)" id="task-2">
+                  <h5>Order #1798</h5>
+                  <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">Smartphones priority freight</p>
+                </div>
+              </div>
+              
+              <div class="kanban-col" id="kanban-done" ondragover="event.preventDefault()" ondrop="app.handleDrop(event, 'done')">
+                <h4>Delivered</h4>
+                <div class="glass-panel kanban-task" draggable="true" ondragstart="app.handleDragStart(event)" id="task-3">
+                  <h5>Order #1722</h5>
+                  <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.25rem;">Modular sofas delivery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Script initialization -->
+  <script src="app.js"></script>
+</body>
+</html>
